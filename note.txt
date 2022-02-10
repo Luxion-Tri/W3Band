@@ -1,0 +1,8 @@
+Thành phần website: 
+ - Header
+ - Navigation
+ - Breadcrumb
+ - Sidebar  
+ - Slider
+ - Content
+ - Footer
