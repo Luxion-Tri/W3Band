@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -15,14 +16,14 @@
 </head>
 <body>
     <div class="main">
-        <div class="header">
+        <div id="header" class="overflow-hidden">
             <ul class="nav">
-                <li class="btn nav-item"><a href="#">Home</a></li>
-                <li class="btn nav-item"><a href="#band">Band</a></li>
-                <li class="btn nav-item"><a href="#tour">Tour</a></li>
-                <li class="btn nav-item"><a href="#contact">Contact</a></li>
-                <li class="btn nav-item">
-                    <a href="#">More <i class="fas fa-caret-down"></i></a>
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#band">Band</a></li>
+                <li class="nav-item"><a href="#tour">Tour</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
+                <li class="nav-item ">
+                    <a class="nav-link">More <i class="fas fa-caret-down"></i></a>
                     <ul class="header-dropdown">
                         <li class="nav-item"><a href="#">Merchandise</a></li>
                         <li class="nav-item"><a href="#">Extras</a></li>
@@ -30,10 +31,17 @@
                     </ul>
                 </li>
             </ul>
-            <div class="search-icon">
+            <div  class="header__icon--right search__icon">
                 <i class="fas fa-search"></i>
             </div>
+            
+            <!-- Mobile menu -->
+            <div class="header__icon--right menu__icon btn">
+                <i class="fa fa-bars"></i>
+            </div>
         </div>
+
+        <div class="insertion"></div>
         <div class="slider">
             <div class="text-content">
                 <h3 class="text-content_title">
@@ -57,7 +65,7 @@
                 </div>
                 <div class="row about-member-list">
                     <div class="col col-third text-center">
-                        <p class="'member-name">Name</p>
+                        <p class="member-name">Name</p>
                         <img src="./assets/image/content/bandmember.jpg" alt="" class="member-avatar">
                     </div>
                     <div class="col col-third text-center">
@@ -98,9 +106,9 @@
                             <img src="./assets/image/ticket_thumbnail/NewYork.jpg" alt="New York" class="ticket-thumbnail">
                             <div class="ticket-information">
                                 <p class="ticket-title">New York</p>
-                                <p class="ticket-time">27 Nov 2016</p>
+                                <p class="ticket-time">Tues 27 Nov 2016</p>
                                 <p class="ticket-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn button-buy-ticket js-buy-ticket">Buy Ticket</button>
+                                <button class="btn button-buy-ticket js-buy-ticket s-full-width">Buy Ticket</button>
                             </div>
                         </div>
                         <div class="col col-third">
@@ -109,7 +117,7 @@
                                 <p class="ticket-title">Paris</p>
                                 <p class="ticket-time">Sat 28 Nov 2016</p>
                                 <p class="ticket-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn button-buy-ticket js-buy-ticket">Buy Ticket</button>
+                                <button class="btn button-buy-ticket js-buy-ticket s-full-width">Buy Ticket</button>
                             </div>
                         </div>
                         <div class="col col-third">
@@ -118,7 +126,7 @@
                                 <p class="ticket-title">San Francisco</p>
                                 <p class="ticket-time">Sun 29 Nov 2016</p>
                                 <p class="ticket-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn button-buy-ticket js-buy-ticket">Buy Ticket</button>
+                                <button class="btn button-buy-ticket js-buy-ticket s-full-width">Buy Ticket</button>
                             </div>
                         </div>
                     </div>
@@ -135,17 +143,17 @@
                 <div class="row contact-detail">
                     <div class="col col-half contact-information">
                         <p><i class="fa fa-map-marker"></i>Chicago, US</p>
-                        <p><i class="fa fa-phone"></i>Phone: +00 151515</p>
-                        <p><i class="fa fa-envelope"></i>Email: mail@mail.com</p>
+                        <p><i class="fa fa-phone"></i>Phone: <a href="tel://+00151515">+00 151515</a></p>
+                        <p><i class="fa fa-envelope"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
                     </div>
                     <div class="col col-half contact-form">
                         <form action="">
                             <div class="row">
                                 <div class="col col-half">
-                                    <input placeholder="Name" type="name" required class="form-control">
+                                    <input placeholder="Name" type="name" required class="form-control s-fix">
                                 </div>
                                 <div class="col col-half">
-                                    <input placeholder="Email" type="email" required class="form-control">
+                                    <input placeholder="Email" type="email" required class="form-control s-fix">
                                 </div>
                             </div>
                             <div class="row">
@@ -153,7 +161,7 @@
                                     <input placeholder="Message" type="text" required class="form-control" >
                                 </div>
                             </div>
-                            <input value="Send" type="submit" class="btn submit-btn">
+                            <input value="Send" type="submit" class="btn submit-btn s-full-width">
                         </form>
                     </div>
                 </div>
@@ -202,30 +210,7 @@
             </div>
         </div>
     </div>
-    <script>
-        const buyBtns = document.querySelectorAll('.js-buy-ticket')
-        const modal = document.querySelector('.modal')
-        const quitIcon = document.querySelector('.quit-btn')
-        const quitButton = document.querySelector('.close-btn')
-        const modalContainer = document.querySelector('.modal-container')
-
-        function ShowModal() {
-            modal.classList.add('open-modal')
-        }
-
-        function CancelModal() {
-            modal.classList.remove('open-modal')
-        }
-
-        quitIcon.addEventListener('click', CancelModal)
-        quitButton.addEventListener('click', CancelModal)
-        modal.addEventListener('click', CancelModal)
-        modalContainer.addEventListener('click', function(event) {
-            event.stopImmediatePropagation();
-        })
-        for (const buyBtn of buyBtns) {
-            buyBtn.addEventListener('click', ShowModal)
-        }    
-    </script>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/responsive/mobile/header_menu.js"></script>
 </body>
 </html>
